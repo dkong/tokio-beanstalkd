@@ -8,6 +8,7 @@ use tracing::trace;
 use std::io;
 use std::str;
 use std::str::FromStr;
+use std::fmt;
 
 pub(crate) mod error;
 mod request;
@@ -36,6 +37,12 @@ pub struct Id(u32);
 impl From<u32> for Id {
     fn from(value: u32) -> Self {
         Self(value)
+    }
+}
+
+impl fmt::Display for Id {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.0)
     }
 }
 

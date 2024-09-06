@@ -102,7 +102,7 @@ impl fmt::Display for Request {
             ),
             Request::Reserve => write!(f, "reserve\r\n"),
             Request::Use { tube } => write!(f, "use {}\r\n", tube),
-            Request::Delete { id } => write!(f, "delete {:?}\r\n", id),
+            Request::Delete { id } => write!(f, "delete {}\r\n", id),
             Request::Release {
                 id,
                 priority,
